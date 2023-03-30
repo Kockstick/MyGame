@@ -14,14 +14,86 @@ using System.Windows.Shapes;
 
 namespace MyGame
 {
-    /// <summary>
-    /// Логика взаимодействия для PlayersPanel.xaml
-    /// </summary>
     public partial class PlayersPanel : Border
     {
+        private Player _currentPlayer;
+        public Player currentPlayer
+        {
+            get
+            {
+                return _currentPlayer;
+            }
+            set
+            {
+                if(_currentPlayer != null)
+                    _currentPlayer.UnSelect();
+
+                _currentPlayer = value;
+                _currentPlayer.Select();
+            }
+        }
+
+        private List<Color> colors = new List<Color>()
+        {
+            Colors.Violet,
+            Colors.Yellow,
+            Colors.Green,
+            Colors.Blue,
+            Colors.Magenta,
+            Colors.Cyan,
+            Colors.Red,
+            Colors.Pink,
+            Colors.Purple,
+            Colors.Orange,
+            Colors.Orchid,
+            Colors.YellowGreen
+        };
+
+        private List<Player> players = new List<Player>();
+
         public PlayersPanel()
         {
             InitializeComponent();
+        }
+
+        private void Add_Click(object sender, MouseButtonEventArgs e)
+        {
+            if(colors.Count == 0)
+                return;
+
+            Random random = new Random();
+            Color color = colors[random.Next(colors.Count)];
+
+            Player player = new Player(this, color);
+            players.Add(player);
+            PlayersStackPanel.Children.Add(player);
+            player.Create(players.Count == 1);
+            colors.Remove(color);
+        }
+
+        private void Remove_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (PlayersStackPanel.Children.Count == 0)
+                return;
+            Player player = (Player)PlayersStackPanel.Children[PlayersStackPanel.Children.Count - 1];
+
+            colors.Add(player.color);
+            players.Remove(player);
+            player.Delete();
+        }
+
+        private void Skip_Click(object sender, MouseButtonEventArgs e)
+        {
+            for (int i = 0; i < players.Count; i++)
+            {
+                if(currentPlayer == players[i])
+                {
+                    if (i == players.Count - 1)
+                        i = -1;
+                    currentPlayer = players[i + 1];
+                    return;
+                }
+            }
         }
     }
 }

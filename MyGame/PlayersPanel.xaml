@@ -5,10 +5,86 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyGame"
         mc:Ignorable="d"
-        MinHeight="1000" Width="500"
+        MinHeight="1000" Width="450"
         VerticalAlignment="Center"
         HorizontalAlignment="Right">
     <Grid>
-        
+        <ScrollViewer>
+            <StackPanel
+                x:Name="PlayersStackPanel"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center">
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Orientation="Horizontal">
+
+            <Border
+                Name="SkipPlayer"
+                Height="60"
+                Width="100"
+                Background="LightCoral"
+                CornerRadius="20"
+                Margin="20,20,40,20"
+                Cursor="Hand"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right">
+
+                <Label
+                    Content="Skip"
+                    FontSize="35"
+                    FontWeight="ExtraBold"
+                    Foreground="White"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    MouseDown="Skip_Click"/>
+            </Border>
+
+            <Border
+                Name="AddPlayer"
+                Height="60"
+                Width="60"
+                Background="Green"
+                CornerRadius="20"
+                Margin="0,20,20,20"
+                Cursor="Hand"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right">
+                
+                <Label
+                    Content="+"
+                    FontSize="35"
+                    FontWeight="ExtraBold"
+                    Foreground="White"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    MouseDown="Add_Click"/>
+            </Border>
+
+            <Border
+                Name="RemovePlayer"
+                Height="60"
+                Width="60"
+                Background="Red"
+                CornerRadius="20"
+                Margin="0,20,40,20"
+                Cursor="Hand"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right">
+
+                <Label
+                    Content="-"
+                    FontSize="35"
+                    FontWeight="ExtraBold"
+                    Foreground="White"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    MouseDown="Remove_Click"/>
+            </Border>
+        </StackPanel>
     </Grid>
 </Border>
