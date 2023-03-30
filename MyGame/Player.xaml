@@ -95,12 +95,12 @@
 
         <Label
             x:Name="ScorePlayer"
-            Content="500"
-            Margin="10"
+            Content="0"
+            Margin="7"
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
-            FontSize="20"/>
+            FontSize="25"/>
 
     </Grid>
 </Border>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyGame"
         mc:Ignorable="d"
-        MinHeight="1000" Width="450"
+        MinHeight="1000" Width="370"
         VerticalAlignment="Center"
         HorizontalAlignment="Right">
     <Grid>
@@ -13,7 +13,8 @@
             <StackPanel
                 x:Name="PlayersStackPanel"
                 HorizontalAlignment="Right"
-                VerticalAlignment="Center">
+                VerticalAlignment="Center"
+                Margin="0,50,0,150">
 
             </StackPanel>
         </ScrollViewer>
@@ -21,7 +22,8 @@
         <StackPanel
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
-            Orientation="Horizontal">
+            Orientation="Horizontal"
+            Margin="2">
 
             <Border
                 Name="SkipPlayer"
@@ -57,6 +59,7 @@
                 
                 <Label
                     Content="+"
+                    Padding="0"
                     FontSize="35"
                     FontWeight="ExtraBold"
                     Foreground="White"
@@ -78,6 +81,7 @@
 
                 <Label
                     Content="-"
+                    Padding="0"
                     FontSize="35"
                     FontWeight="ExtraBold"
                     Foreground="White"
