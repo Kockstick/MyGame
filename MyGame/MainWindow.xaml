@@ -17,16 +17,11 @@
         <local:PlayersPanel 
             Grid.Column="2"/>
 
-        <StackPanel 
-            Grid.Column="1"
-            Margin="30,0,30,0"
-            Orientation="Vertical"
-            Height="Auto"
-            VerticalAlignment="Center">
-            <local:Row/>
-        </StackPanel>
+        <local:RowsPanel
+            Grid.Column="1"/>
 
-        <local:ButtonsPanel/>
+        <local:ButtonsPanel
+            x:Name="BtnsPanel"/>
 
     </Grid>
 </Window>

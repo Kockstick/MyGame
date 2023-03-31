@@ -19,9 +19,22 @@ namespace MyGame
     /// </summary>
     public partial class ButtonsPanel : Border
     {
+        public MainWindow parent { get; set; }
         public ButtonsPanel()
         {
             InitializeComponent();
+            
+            foreach (var item in StackPanel.Children)
+            {
+                ToolButton btn = item as ToolButton;
+                btn.parent = this;
+            }
+        }
+
+        public void OnButtonClick(object sender, MouseButtonEventArgs e)
+        {
+            var btn = sender as ToolButton;
+            //MessageBox.Show(btn.Tag.ToString());
         }
     }
 }

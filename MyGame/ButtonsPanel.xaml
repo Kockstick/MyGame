@@ -1,20 +1,58 @@
-﻿<Border x:Class="MyGame.ButtonsPanel"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MyGame"
-        mc:Ignorable="d"
-        Height="1080" Width="300">
+﻿<Border 
+    x:Class="MyGame.ButtonsPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyGame"
+    mc:Ignorable="d"
+    Height="1080" Width="300">
+    
     <Grid>
         <StackPanel
-            Margin="0,100,0,0">
+            x:Name="StackPanel"
+            Margin="0,0,0,50"
+            VerticalAlignment="Center">
             <local:ToolButton
+                x:Name="BtnOpen"
+                Tag="open"
                 BtnName="Открыть"
                 BtnColor="LightBlue"/>
             <local:ToolButton
+                x:Name="BtnSave"
+                Tag="save"
                 BtnName="Сохранить"
                 BtnColor="LightPink"/>
+            <local:ToolButton
+                x:Name="BtnEdit"
+                Tag="edit"
+                BtnName="Изменить"
+                BtnColor="LightGoldenrodYellow"/>
+            <local:ToolButton
+                x:Name="BtnAdd"
+                Tag="add"
+                BtnName="Добавить"
+                BtnColor="LightGreen"/>
+            <local:ToolButton
+                x:Name="BtnDelete"
+                Tag="delete"
+                BtnName="Удалить"
+                BtnColor="LightSalmon"/>
+            <local:ToolButton
+                x:Name="BtnReady"
+                Tag="ready"
+                BtnName="Готово"
+                BtnColor="LightSeaGreen"/>
+            <local:ToolButton
+                x:Name="BtnOk"
+                Tag="ok"
+                BtnName="Ок"
+                BtnColor="LightGreen"/>
+            <local:ToolButton
+                x:Name="BtnCansel"
+                Tag="cansel"
+                BtnName="Отмена"
+                BtnColor="LightSalmon"/>
         </StackPanel>
     </Grid>
 </Border>

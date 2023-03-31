@@ -64,6 +64,9 @@
     <Compile Include="Row.xaml.cs">
       <DependentUpon>Row.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RowsPanel.xaml.cs">
+      <DependentUpon>RowsPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolButton.xaml.cs">
       <DependentUpon>ToolButton.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Row.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RowsPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

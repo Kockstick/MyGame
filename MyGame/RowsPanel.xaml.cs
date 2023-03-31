@@ -10,20 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MyGame
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для RowsPanel.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RowsPanel : Border
     {
-        public MainWindow()
+        public RowsPanel()
         {
             InitializeComponent();
-            BtnsPanel.parent = this;
         }
     }
 }

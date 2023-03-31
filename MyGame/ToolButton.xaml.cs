@@ -48,6 +48,7 @@ namespace MyGame
         }
 
         private bool isAnim;
+        public ButtonsPanel parent { get; set; }
 
         public ToolButton()
         {
@@ -56,20 +57,35 @@ namespace MyGame
 
         private void Thumb_MouseEnter(object sender, MouseEventArgs e)
         {
-            Storyboard sb = (Storyboard)ToolBtnBorder.FindResource("MouseEnter");
-            sb.Begin();
+            Animate("MouseEnter");
         }
 
         private void Thumb_MouseLeave(object sender, MouseEventArgs e)
         {
-            Storyboard sb = (Storyboard)ToolBtnBorder.FindResource("MouseLeav");
-            sb.Begin();
+            Animate("MouseLeav");
         }
 
         private void Thumb_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            Storyboard sb = (Storyboard)ToolBtnBorder.FindResource("Hide");
+            if(parent != null)
+                parent.OnButtonClick(sender, e);
+            Animate("Hide");
+            isAnim = true;
+        }
+
+        private void Animate(string key)
+        {
+            if (isAnim)
+                return;
+
+            Storyboard sb = (Storyboard)ToolBtnBorder.FindResource(key);
+            sb.Completed += new EventHandler(onEndAnim);
             sb.Begin();
+        }
+
+        private void onEndAnim(object sender, EventArgs e)
+        {
+            isAnim = false;
         }
     }
 }
