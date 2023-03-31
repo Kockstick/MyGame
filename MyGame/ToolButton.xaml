@@ -1,0 +1,66 @@
+﻿<Border 
+    x:Class="MyGame.ToolButton"
+    x:Name="ToolBtnBorder"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyGame"
+    mc:Ignorable="d"
+    Background="{Binding ElementName=ToolBtnBorder, Path=BtnColor}"
+    Height="80" Width="300"
+    Margin="-90,15,0,15"
+    CornerRadius="0,10,10,0"
+    HorizontalAlignment="Left"
+    MouseEnter="Thumb_MouseEnter"
+    MouseLeave="Thumb_MouseLeave"
+    PreviewMouseDown="Thumb_PreviewMouseDown">
+
+    <Border.Resources>
+        <Storyboard 
+            x:Key="Hide">
+            <ThicknessAnimation 
+                Storyboard.TargetName="ToolBtnBorder" 
+                Storyboard.TargetProperty="Margin"
+                From="-90,15,0,15"
+                To="-310,15,0,15"
+                Duration="0:0:0:0.1" />
+        </Storyboard>
+        <Storyboard 
+            x:Key="MouseEnter">
+            <ThicknessAnimation 
+                Storyboard.TargetName="ToolBtnBorder" 
+                Storyboard.TargetProperty="Margin"
+                From="-90,15,0,15"
+                To="-30,15,0,15"
+                Duration="0:0:0:0.1" />
+        </Storyboard>
+        <Storyboard 
+            x:Key="MouseLeav">
+            <ThicknessAnimation 
+                Storyboard.TargetName="ToolBtnBorder" 
+                Storyboard.TargetProperty="Margin"
+                From="-30,15,0,15"
+                To="-90,15,0,15"
+                Duration="0:0:0:0.1" />
+        </Storyboard>
+        <Storyboard 
+            x:Key="Show">
+            <ThicknessAnimation 
+                Storyboard.TargetName="ToolBtnBorder" 
+                Storyboard.TargetProperty="Margin"
+                From="-310,15,0,15"
+                To="-90,15,0,15"
+                Duration="0:0:0:0.1" />
+        </Storyboard>
+    </Border.Resources>
+
+    <Label
+        Content="{Binding ElementName=ToolBtnBorder, Path=BtnName}"
+        FontSize="30"
+        Margin="70,0,20,0"
+        Padding="20"
+        Foreground="Black"
+        HorizontalContentAlignment="Right"
+        VerticalContentAlignment="Center"/>
+</Border>

@@ -26,5 +26,7 @@
             <local:Row/>
         </StackPanel>
 
+        <local:ButtonsPanel/>
+
     </Grid>
 </Window>
