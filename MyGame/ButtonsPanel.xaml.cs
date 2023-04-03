@@ -34,7 +34,13 @@ namespace MyGame
         public void OnButtonClick(object sender, MouseButtonEventArgs e)
         {
             var btn = sender as ToolButton;
-            //MessageBox.Show(btn.Tag.ToString());
+            switch (btn.Tag)
+            {
+                case "edit":
+                    parent.RowsPanel.EditRow(true);
+                    btn.Show();
+                    break;
+            }
         }
     }
 }

@@ -21,7 +21,7 @@
         Margin="20"
         CornerRadius="20,0,0,20"
         BorderBrush="Black"
-        BorderThickness="2">
+        BorderThickness="4">
 
         <TextBox
             Text="Категория"
@@ -40,4 +40,42 @@
     <local:Question/>
     <local:Question/>
     <local:Question/>
+
+    <Border
+        x:Name="EditBtnBorder"
+        Height="70"
+        Width="0"
+        CornerRadius="10"
+        Margin="10"
+        Background="LightPink"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Left">
+
+        <Border.Resources>
+            <Storyboard x:Key="Show">
+                <DoubleAnimation 
+                    Storyboard.TargetName="EditBtnBorder" 
+                    Storyboard.TargetProperty="(Border.Width)"
+                    From="0"
+                    To="120"
+                    Duration="0:0:0:0.2" />
+            </Storyboard>
+            <Storyboard x:Key="Hide">
+                <DoubleAnimation 
+                    Storyboard.TargetName="EditBtnBorder" 
+                    Storyboard.TargetProperty="(Border.Width)"
+                    From="120"
+                    To="0"
+                    Duration="0:0:0:0.1" />
+            </Storyboard>
+        </Border.Resources>
+
+        <Label
+            Content="Edit"
+            FontSize="30"
+            Margin="30,0,0,0"
+            HorizontalAlignment="Left"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"/>
+    </Border>
 </StackPanel>

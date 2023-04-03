@@ -18,6 +18,7 @@
             Grid.Column="2"/>
 
         <local:RowsPanel
+            x:Name="RowsPanel"
             Grid.Column="1"/>
 
         <local:ButtonsPanel

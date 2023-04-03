@@ -73,6 +73,12 @@ namespace MyGame
             isAnim = true;
         }
 
+        public void Show()
+        {
+            Animate("Show");
+            isAnim = true;
+        }
+
         private void Animate(string key)
         {
             if (isAnim)

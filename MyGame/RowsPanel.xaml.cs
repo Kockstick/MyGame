@@ -22,6 +22,30 @@ namespace MyGame
         public RowsPanel()
         {
             InitializeComponent();
+            RowsStackPanel.Children.Add(new Row(this));
+            RowsStackPanel.Children.Add(new Row(this));
+            RowsStackPanel.Children.Add(new Row(this));
+            RowsStackPanel.Children.Add(new Row(this));
+            RowsStackPanel.Children.Add(new Row(this));
+            RowsStackPanel.Children.Add(new Row(this));
+        }
+
+        public void EditRow(bool isEdit)
+        {
+            if (RowsStackPanel.Children.Count == 0)
+                return;
+
+            ((Row)RowsStackPanel.Children[0]).ShowEdit();
+        }
+
+        public void AddRow()
+        {
+            RowsStackPanel.Children.Add(new Row());
+        }
+
+        public void AddRow(Row row)
+        {
+            RowsStackPanel.Children.Add(row);
         }
     }
 }

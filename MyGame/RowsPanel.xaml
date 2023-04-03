@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:MyGame"
         mc:Ignorable="d"
         Height="1080" Width="1250">
-    
+
     <StackPanel 
+        x:Name="RowsStackPanel"
         Grid.Column="1"
-        Margin="30,0,30,0"
+        Margin="30,-100,30,0"
         Orientation="Vertical"
         Height="Auto"
         VerticalAlignment="Center">
-        
-        <local:Row/>
+
     </StackPanel>
 </Border>

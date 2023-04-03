@@ -10,7 +10,7 @@
         CornerRadius="10"
         Margin="10"
         BorderBrush="Black"
-        BorderThickness="2">
+        BorderThickness="4">
 
     <Border.OpacityMask>
         <VisualBrush>
