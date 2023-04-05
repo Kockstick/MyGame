@@ -32,14 +32,20 @@
             IsReadOnly="True"
             Background="Transparent"
             HorizontalContentAlignment="Left"
-            VerticalContentAlignment="Center"/>
+            VerticalContentAlignment="Center"
+            Cursor="Arrow"/>
     </Border>
 
-    <local:Question/>
-    <local:Question/>
-    <local:Question/>
-    <local:Question/>
-    <local:Question/>
+    <local:Question
+        BtnScore="100"/>
+    <local:Question
+        BtnScore="200"/>
+    <local:Question
+        BtnScore="300"/>
+    <local:Question
+        BtnScore="400"/>
+    <local:Question
+        BtnScore="500"/>
 
     <Border
         x:Name="EditBtnBorder"
@@ -49,7 +55,9 @@
         Margin="10"
         Background="LightPink"
         VerticalAlignment="Center"
-        HorizontalAlignment="Left">
+        HorizontalAlignment="Left"
+        Cursor="Hand"
+        IsEnabled="False">
 
         <Border.Resources>
             <Storyboard x:Key="Show">
@@ -58,7 +66,7 @@
                     Storyboard.TargetProperty="(Border.Width)"
                     From="0"
                     To="120"
-                    Duration="0:0:0:0.2" />
+                    Duration="0:0:0:0.09" />
             </Storyboard>
             <Storyboard x:Key="Hide">
                 <DoubleAnimation 
@@ -66,9 +74,57 @@
                     Storyboard.TargetProperty="(Border.Width)"
                     From="120"
                     To="0"
-                    Duration="0:0:0:0.1" />
+                    Duration="0:0:0:0.09" />
             </Storyboard>
         </Border.Resources>
+
+        <Border.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+
+                        <DoubleAnimation 
+                        Storyboard.TargetProperty="Width"
+                        To="130"
+                        Duration="0:0:0:0.1" />
+
+                        <DoubleAnimation 
+                        Storyboard.TargetProperty="Height"
+                        To="80"
+                        Duration="0:0:0:0.1" />
+
+                        <ThicknessAnimation 
+                        Storyboard.TargetProperty="Margin"
+                        To="5"
+                        Duration="0:0:0:0.1" />
+
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+
+                        <DoubleAnimation 
+                        Storyboard.TargetProperty="Width"
+                        To="120"
+                        Duration="0:0:0:0.1" />
+
+                        <DoubleAnimation 
+                        Storyboard.TargetProperty="Height"
+                        To="70"
+                        Duration="0:0:0:0.1" />
+
+                        <ThicknessAnimation 
+                        Storyboard.TargetProperty="Margin"
+                        To="10"
+                        Duration="0:0:0:0.1" />
+
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Border.Triggers>
 
         <Label
             Content="Edit"
@@ -76,6 +132,7 @@
             Margin="30,0,0,0"
             HorizontalAlignment="Left"
             HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center"/>
+            VerticalContentAlignment="Center"
+            Cursor="Hand"/>
     </Border>
 </StackPanel>

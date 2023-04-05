@@ -33,37 +33,16 @@ namespace MyGame
 
         public void ShowEdit()
         {
+            EditBtnBorder.IsEnabled = true;
             Storyboard sb = (Storyboard)EditBtnBorder.FindResource("Show");
-            sb.Completed += new EventHandler(onEndShow);
             sb.Begin();
-        }
-
-        private void onEndShow(object sender, EventArgs e)
-        {
-            if (parent == null)
-                return;
-
-            var list = parent.RowsStackPanel.Children;
-
-            for(int i = 0; i < list.Count; i++)
-            {
-                Row row = list[i] as Row;
-
-                if(this == list[i])
-                {
-                    if (i == list.Count - 1)
-                        return;
-
-                    ((Row)list[i + 1]).ShowEdit();
-                    return;
-                }
-            }
         }
 
         public void HideEdit()
         {
             Storyboard sb = (Storyboard)EditBtnBorder.FindResource("Hide");
             sb.Begin();
+            EditBtnBorder.IsEnabled = false;
         }
     }
 }

@@ -66,6 +66,7 @@ namespace MyGame
 
             Player player = new Player(this, color);
             players.Add(player);
+            player.NamePlayer.Text = "Player " + players.Count;
             PlayersStackPanel.Children.Add(player);
             player.Create(players.Count == 1);
             colors.Remove(color);

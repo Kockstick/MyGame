@@ -58,6 +58,9 @@
     <Compile Include="ButtonsPanel.xaml.cs">
       <DependentUpon>ButtonsPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExpandRow.xaml.cs">
+      <DependentUpon>ExpandRow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Question.xaml.cs">
       <DependentUpon>Question.xaml</DependentUpon>
     </Compile>
@@ -71,6 +74,10 @@
       <DependentUpon>ToolButton.xaml</DependentUpon>
     </Compile>
     <Page Include="ButtonsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExpandRow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

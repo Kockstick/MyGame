@@ -79,6 +79,12 @@ namespace MyGame
             isAnim = true;
         }
 
+        public void Hide()
+        {
+            Animate("Hide");
+            isAnim = true;
+        }
+
         private void Animate(string key)
         {
             if (isAnim)

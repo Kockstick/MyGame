@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:MyGame"
         mc:Ignorable="d"
         WindowState="Maximized"
-        Title="Мая игра" Height="1080" Width="1920">
+        Title="Мая игра" Height="1080" Width="1920"
+        ResizeMode="CanMinimize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>

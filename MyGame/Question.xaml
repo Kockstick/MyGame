@@ -1,4 +1,5 @@
 ﻿<Border x:Class="MyGame.Question"
+        x:Name="QuestionBorder"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,8 +10,56 @@
         Background="White"
         CornerRadius="10"
         Margin="10"
-        BorderBrush="Black"
+        BorderBrush="{Binding ElementName=QuestionBorder, Path=QColor}"
         BorderThickness="4">
+
+    <Border.Triggers>
+        <EventTrigger RoutedEvent="MouseEnter">
+            <BeginStoryboard>
+                <Storyboard>
+                    
+                    <DoubleAnimation 
+                        Storyboard.TargetProperty="Width"
+                        To="115"
+                        Duration="0:0:0:0.1" />
+                    
+                    <DoubleAnimation 
+                        Storyboard.TargetProperty="Height"
+                        To="115"
+                        Duration="0:0:0:0.1" />
+
+                    <ThicknessAnimation 
+                        Storyboard.TargetProperty="Margin"
+                        To="2.5"
+                        Duration="0:0:0:0.1" />
+
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+
+        <EventTrigger RoutedEvent="MouseLeave">
+            <BeginStoryboard>
+                <Storyboard>
+                    
+                    <DoubleAnimation 
+                        Storyboard.TargetProperty="Width"
+                        To="100"
+                        Duration="0:0:0:0.1" />
+
+                    <DoubleAnimation 
+                        Storyboard.TargetProperty="Height"
+                        To="100"
+                        Duration="0:0:0:0.1" />
+
+                    <ThicknessAnimation 
+                        Storyboard.TargetProperty="Margin"
+                        To="10"
+                        Duration="0:0:0:0.1" />
+
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Border.Triggers>
 
     <Border.OpacityMask>
         <VisualBrush>
@@ -26,9 +75,10 @@
 
     <Label
         Name="scoreLabel"
-        Content="100"
+        Content="{Binding ElementName=QuestionBorder, Path=BtnScore}"
         Foreground="Black"
         FontSize="40"
         HorizontalContentAlignment="Center"
-        VerticalContentAlignment="Center"/>
+        VerticalContentAlignment="Center"
+        Cursor="Hand"/>
 </Border>

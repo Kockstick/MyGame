@@ -29,6 +29,8 @@ namespace MyGame
                 ToolButton btn = item as ToolButton;
                 btn.parent = this;
             }
+
+            ShowFirstGroup();
         }
 
         public void OnButtonClick(object sender, MouseButtonEventArgs e)
@@ -38,9 +40,49 @@ namespace MyGame
             {
                 case "edit":
                     parent.RowsPanel.EditRow(true);
-                    btn.Show();
+                    ShowSecondGroup();
+                    break;
+                case "ready":
+                    parent.RowsPanel.EditRow(false);
+                    ShowFirstGroup();
                     break;
             }
+        }
+
+        public void ShowFirstGroup()
+        {
+            BtnOpen.Show();
+            BtnSave.Show();
+            BtnEdit.Show();
+            BtnAdd.Hide();
+            BtnDelete.Hide();
+            BtnReady.Hide();
+            BtnOk.Hide();
+            BtnCansel.Hide();
+        }
+
+        public void ShowSecondGroup()
+        {
+            BtnOpen.Hide();
+            BtnSave.Hide();
+            BtnEdit.Hide();
+            BtnAdd.Show();
+            BtnDelete.Show();
+            BtnReady.Show();
+            BtnOk.Hide();
+            BtnCansel.Hide();
+        }
+
+        public void ShowThirdGroup()
+        {
+            BtnOpen.Hide();
+            BtnSave.Hide();
+            BtnEdit.Hide();
+            BtnAdd.Hide();
+            BtnDelete.Hide();
+            BtnReady.Hide();
+            BtnOk.Show();
+            BtnCansel.Show();
         }
     }
 }

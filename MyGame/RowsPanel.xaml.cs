@@ -35,7 +35,13 @@ namespace MyGame
             if (RowsStackPanel.Children.Count == 0)
                 return;
 
-            ((Row)RowsStackPanel.Children[0]).ShowEdit();
+            foreach (var item in RowsStackPanel.Children)
+            {
+                if(isEdit)
+                    ((Row)item).ShowEdit();
+                else 
+                    ((Row)item).HideEdit();
+            }
         }
 
         public void AddRow()
