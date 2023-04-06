@@ -57,12 +57,18 @@ namespace MyGame
 
         private void Thumb_MouseEnter(object sender, MouseEventArgs e)
         {
-            Animate("MouseEnter");
+            if (isAnim)
+                return;
+            Storyboard sb = (Storyboard)ToolBtnBorder.FindResource("MouseEnter");
+            sb.Begin();
         }
 
         private void Thumb_MouseLeave(object sender, MouseEventArgs e)
         {
-            Animate("MouseLeav");
+            if (isAnim)
+                return;
+            Storyboard sb = (Storyboard)ToolBtnBorder.FindResource("MouseLeav");
+            sb.Begin();
         }
 
         private void Thumb_PreviewMouseDown(object sender, MouseButtonEventArgs e)
