@@ -20,6 +20,9 @@ namespace MyGame
     public partial class RowsPanel : Border
     {
         public MainWindow mainWindow { get; set; }
+        private int maxRows = 6;
+        public int rowsCount {  get; set; }
+
         public RowsPanel()
         {
             InitializeComponent();
@@ -42,12 +45,24 @@ namespace MyGame
         public void AddRow()
         {
             Row row = new Row(this);
+            row.color = Colors.Black;
+            row.ShowEdit();
             mainWindow.ExpandRow.Open(row);
+            rowsCount++;
         }
+
+        public bool CanCreate() =>
+            rowsCount < maxRows;
 
         public void Delete()
         {
-            RowsStackPanel.Children.Remove(RowsStackPanel.Children[RowsStackPanel.Children.Count - 1]);
+            if (RowsStackPanel.Children.Count == 0)
+                return;
+
+            Row row = (Row)RowsStackPanel.Children[RowsStackPanel.Children.Count - 1];
+            RowsStackPanel.Children.Remove(row);
+            rowsCount--;
+            mainWindow.BtnsPanel.BtnAdd.Show();
         }
     }
 }

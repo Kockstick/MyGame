@@ -81,7 +81,12 @@ namespace MyGame
             BtnOpen.Hide();
             BtnSave.Hide();
             BtnEdit.Hide();
-            BtnAdd.Show();
+
+            if (parent.RowsPanel.CanCreate())
+                BtnAdd.Show();
+            else
+                BtnAdd.Hide();
+
             BtnDelete.Show();
             BtnReady.Show();
             BtnOk.Hide();

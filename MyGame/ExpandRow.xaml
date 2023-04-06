@@ -6,11 +6,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyGame"
         mc:Ignorable="d"
-        Height="1020" Width="1630"
+        Height="1020" Width="500"
         CornerRadius="50,0,0,50"
         Background="White"
-        Margin="0,0,-3500,0"
-        BorderBrush="Black">
+        Margin="0,0,-600,0"
+        BorderBrush="Black"
+        HorizontalAlignment="Right">
 
     <Border.Resources>
         <Storyboard x:Key="Show">
@@ -19,13 +20,23 @@
                 Storyboard.TargetProperty="Margin"
                 To="0,0,-10,0"
                 Duration="0:0:0:0.1" />
+            <DoubleAnimation 
+                Storyboard.TargetName="ExpandRowBorder" 
+                Storyboard.TargetProperty="Width"
+                To="1630"
+                Duration="0:0:0:0.1" />
         </Storyboard>
         <Storyboard x:Key="Hide">
             <ThicknessAnimation 
                 Storyboard.TargetName="ExpandRowBorder" 
                 Storyboard.TargetProperty="Margin"
-                To="0,0,-3500,0"
+                To="0,0,-600,0"
                 Duration="0:0:0:0.1"/>
+            <DoubleAnimation 
+                Storyboard.TargetName="ExpandRowBorder" 
+                Storyboard.TargetProperty="Width"
+                To="500"
+                Duration="0:0:0:0.1" />
         </Storyboard>
     </Border.Resources>
 

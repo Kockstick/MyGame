@@ -20,7 +20,7 @@
         Width="350"
         Margin="20"
         CornerRadius="20,0,0,20"
-        BorderBrush="Black"
+        BorderBrush="{Binding ElementName=RowStackPanel, Path=RowColor}"
         BorderThickness="4">
 
         <TextBox
@@ -56,14 +56,15 @@
     <Border
         x:Name="EditBtnBorder"
         Height="70"
-        Width="0"
+        Width="120"
         CornerRadius="10"
         Margin="10"
         Background="LightPink"
         VerticalAlignment="Center"
         HorizontalAlignment="Left"
         Cursor="Hand"
-        IsEnabled="False">
+        IsEnabled="False"
+        MouseDown="EditBtnBorder_MouseDown">
 
         <Border.Resources>
             <Storyboard x:Key="Show">
@@ -90,9 +91,9 @@
                     <Storyboard>
 
                         <DoubleAnimation 
-                        Storyboard.TargetProperty="Width"
-                        To="130"
-                        Duration="0:0:0:0.1" />
+                            Storyboard.TargetProperty="Width"
+                            To="130"
+                            Duration="0:0:0:0.1" />
 
                         <DoubleAnimation 
                         Storyboard.TargetProperty="Height"

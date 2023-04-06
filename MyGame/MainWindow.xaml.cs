@@ -12,6 +12,7 @@ namespace MyGame
             BtnsPanel.parent = this;
             RowsPanel.mainWindow = this;
             ExpandRow.mainWindow = this;
+            OpenQuestion.mainWindow = this;
         }
     }
 }

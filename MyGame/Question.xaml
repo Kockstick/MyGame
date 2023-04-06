@@ -80,5 +80,6 @@
         FontSize="40"
         HorizontalContentAlignment="Center"
         VerticalContentAlignment="Center"
-        Cursor="Hand"/>
+        Cursor="Hand"
+        MouseDown="scoreLabel_MouseDown"/>
 </Border>

@@ -64,6 +64,9 @@
     <Compile Include="ExpandRow.xaml.cs">
       <DependentUpon>ExpandRow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OpenQuestion.xaml.cs">
+      <DependentUpon>OpenQuestion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Question.xaml.cs">
       <DependentUpon>Question.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OpenQuestion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Player.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -51,6 +51,20 @@ namespace MyGame
         public bool isCurrent { get; set; }
         private bool isAnim;
 
+        private int _score = 0;
+        public int score
+        {
+            get
+            {
+                return _score;
+            }
+            set
+            {
+                _score = value;
+                ScorePlayer.Content = _score.ToString();
+            }
+        }
+
         public Player()
         {
             InitializeComponent();

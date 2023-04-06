@@ -50,9 +50,12 @@ namespace MyGame
 
         public void Cansel()
         {
-            mainWindow.RowsPanel.RowsStackPanel.Children.Remove(row);
+            var rows = mainWindow.RowsPanel.RowsStackPanel.Children;
+            if (rows[rows.Count - 1] == row)
+                rows.Remove(row);
             Storyboard sb = (Storyboard)ExpandRowBorder.FindResource("Hide");
             sb.Begin();
+            mainWindow.RowsPanel.rowsCount--;
         }
 
         public void Ok()

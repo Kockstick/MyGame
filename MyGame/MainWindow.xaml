@@ -16,6 +16,7 @@
         </Grid.ColumnDefinitions>
 
         <local:PlayersPanel 
+            x:Name="PlayersPanel"
             Grid.Column="2"/>
 
         <local:RowsPanel
@@ -28,6 +29,11 @@
         <local:ExpandRow
             x:Name="ExpandRow"
             Grid.Column="1"
+            Grid.ColumnSpan="2"/>
+
+        <local:OpenQuestion
+            x:Name="OpenQuestion"
+            Grid.Column="0"
             Grid.ColumnSpan="2"/>
 
     </Grid>

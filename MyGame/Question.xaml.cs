@@ -34,7 +34,6 @@ namespace MyGame
             }
             set
             {
-                MessageBox.Show(value);
                 if(int.TryParse(value, out score))
                     SetValue(BtnNameProperty, value);
             }
@@ -54,9 +53,11 @@ namespace MyGame
             }
         }
 
-        private int score;
+        public int score;
         public string text { get; set; }
         public string answer { get; set; }
+
+        public MainWindow mainWindow { get; set; }
 
         private bool _isShowed;
         public bool isShowed 
@@ -81,12 +82,27 @@ namespace MyGame
             InitializeComponent();
         }
 
+        public void EditMode(bool isEdit)
+        {
+            if(!isShowed)
+                IsEnabled = !isEdit;
+        }
+
         public Question(int score, string text, string answer, bool isShowed) : this()
         {
             this.score = score;
             this.text = text;
             this.answer = answer;
             this.isShowed = isShowed;
+        }
+
+        private void scoreLabel_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (mainWindow == null)
+                return;
+
+            mainWindow.OpenQuestion.Open(this);
+            isShowed = true;
         }
     }
 }
