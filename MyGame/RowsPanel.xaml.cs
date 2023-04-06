@@ -19,15 +19,10 @@ namespace MyGame
     /// </summary>
     public partial class RowsPanel : Border
     {
+        public MainWindow mainWindow { get; set; }
         public RowsPanel()
         {
             InitializeComponent();
-            RowsStackPanel.Children.Add(new Row(this));
-            RowsStackPanel.Children.Add(new Row(this));
-            RowsStackPanel.Children.Add(new Row(this));
-            RowsStackPanel.Children.Add(new Row(this));
-            RowsStackPanel.Children.Add(new Row(this));
-            RowsStackPanel.Children.Add(new Row(this));
         }
 
         public void EditRow(bool isEdit)
@@ -46,12 +41,13 @@ namespace MyGame
 
         public void AddRow()
         {
-            RowsStackPanel.Children.Add(new Row());
+            Row row = new Row(this);
+            mainWindow.ExpandRow.Open(row);
         }
 
-        public void AddRow(Row row)
+        public void Delete()
         {
-            RowsStackPanel.Children.Add(row);
+            RowsStackPanel.Children.Remove(RowsStackPanel.Children[RowsStackPanel.Children.Count - 1]);
         }
     }
 }

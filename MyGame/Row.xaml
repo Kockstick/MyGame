@@ -24,7 +24,8 @@
         BorderThickness="4">
 
         <TextBox
-            Text="Категория"
+            x:Name="Category"
+            Text=""
             FontSize="30"
             TextWrapping="Wrap"
             BorderThickness="0"
@@ -37,14 +38,19 @@
     </Border>
 
     <local:Question
+        x:Name="Q1"
         BtnScore="100"/>
     <local:Question
+        x:Name="Q2"
         BtnScore="200"/>
     <local:Question
+        x:Name="Q3"
         BtnScore="300"/>
     <local:Question
+        x:Name="Q4"
         BtnScore="400"/>
     <local:Question
+        x:Name="Q5"
         BtnScore="500"/>
 
     <Border

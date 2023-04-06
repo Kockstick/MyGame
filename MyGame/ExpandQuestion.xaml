@@ -1,0 +1,81 @@
+﻿<Border x:Class="MyGame.ExpandQuestion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyGame"
+        mc:Ignorable="d"
+        MinHeight="200" Width="800"
+        Background="White"
+        CornerRadius="10"
+        Margin="15">
+    
+    <Border.Effect>
+        <DropShadowEffect 
+            Opacity="0.3" 
+            ShadowDepth="3" 
+            BlurRadius="20" 
+            RenderingBias="Quality"/>
+    </Border.Effect>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label
+            Name="ScoreLabel"
+            Content="100"
+            FontSize="30"
+            FontWeight="ExtraBold"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Center"/>
+
+        <Label
+            Content="Вопрос: "
+            FontSize="25"
+            Margin="10"
+            Grid.Row="1"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"/>
+
+        <TextBox
+            x:Name="QuestionTextBox"
+            Width="600"
+            MinHeight="50"
+            Margin="5,10,25,5"
+            Padding="10"
+            FontSize="25"
+            Grid.Row="1"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            TextWrapping="Wrap"/>
+
+        <Label
+            Content="Ответ: "
+            FontSize="25"
+            Margin="10"
+            Grid.Row="2"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"/>
+
+        <TextBox
+            x:Name="AnswerTextBox"
+            Width="600"
+            MinHeight="50"
+            Margin="5,10,25,25"
+            Padding="10"
+            FontSize="25"
+            Grid.Row="2"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            TextWrapping="Wrap"/>
+
+    </Grid>
+</Border>

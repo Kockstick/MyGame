@@ -69,8 +69,8 @@ namespace MyGame
         {
             if(parent != null)
                 parent.OnButtonClick(sender, e);
-            Animate("Hide");
-            isAnim = true;
+            //Animate("Hide");
+            //isAnim = true;
         }
 
         public void Show()

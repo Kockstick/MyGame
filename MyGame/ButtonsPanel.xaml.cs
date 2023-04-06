@@ -46,6 +46,21 @@ namespace MyGame
                     parent.RowsPanel.EditRow(false);
                     ShowFirstGroup();
                     break;
+                case "add":
+                    ShowThirdGroup();
+                    parent.RowsPanel.AddRow();
+                    break;
+                case "ok":
+                    ShowSecondGroup();
+                    parent.ExpandRow.Ok();
+                    break;
+                case "cansel":
+                    ShowSecondGroup();
+                    parent.ExpandRow.Cansel();
+                    break;
+                case "delete":
+                    parent.RowsPanel.Delete();
+                    break;
             }
         }
 

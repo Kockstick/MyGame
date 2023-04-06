@@ -21,9 +21,16 @@ namespace MyGame
     public partial class Row : StackPanel
     {
         private RowsPanel parent;
+        public List<Question> Questions { get; set; }
         public Row()
         {
             InitializeComponent();
+            Questions = new List<Question>();
+            Questions.Add(Q1);
+            Questions.Add(Q2);
+            Questions.Add(Q3);
+            Questions.Add(Q4);
+            Questions.Add(Q5);
         }
 
         public Row(RowsPanel rowsPanel) : this()

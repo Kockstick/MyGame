@@ -10,6 +10,8 @@ namespace MyGame
         {
             InitializeComponent();
             BtnsPanel.parent = this;
+            RowsPanel.mainWindow = this;
+            ExpandRow.mainWindow = this;
         }
     }
 }

@@ -25,5 +25,10 @@
         <local:ButtonsPanel
             x:Name="BtnsPanel"/>
 
+        <local:ExpandRow
+            x:Name="ExpandRow"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"/>
+
     </Grid>
 </Window>
