@@ -85,9 +85,14 @@ namespace MyGame
 
         private void Skip_Click(object sender, MouseButtonEventArgs e)
         {
+            Skip();
+        }
+
+        public void Skip()
+        {
             for (int i = 0; i < players.Count; i++)
             {
-                if(currentPlayer == players[i])
+                if (currentPlayer == players[i])
                 {
                     if (i == players.Count - 1)
                         i = -1;

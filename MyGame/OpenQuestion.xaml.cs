@@ -50,6 +50,7 @@ namespace MyGame
                 return;
 
             mainWindow.PlayersPanel.currentPlayer.score += question.score;
+            mainWindow.PlayersPanel.Skip();
             Close(sender, e);
         }
 
